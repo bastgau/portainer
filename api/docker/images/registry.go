@@ -95,6 +95,11 @@ func (c *RegistryClient) EncodedCertainRegistryAuth(registry *portainer.Registry
 	return registryutils.GetRegistryAuthHeader(registry)
 }
 
+// BestMatchRegistry returns the registry whose credentials best match the repository.
+func BestMatchRegistry(repository string, registries []portainer.Registry) (*portainer.Registry, error) {
+	return findBestMatchRegistry(repository, registries)
+}
+
 // findBestMatchRegistry finds out the best match registry for repository @Meng
 // matching precedence:
 // 1. both domain name and username matched (for dockerhub only)

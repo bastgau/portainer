@@ -96,19 +96,20 @@ func (transport *Transport) RoundTrip(request *http.Request) (*http.Response, er
 }
 
 var prefixProxyFuncMap = map[string]func(*Transport, *http.Request, string) (*http.Response, error){
-	"build":      (*Transport).proxyBuildRequest,
-	"configs":    (*Transport).proxyConfigRequest,
-	"containers": (*Transport).proxyContainerRequest,
-	"exec":       (*Transport).proxyExecRequest,
-	"images":     (*Transport).proxyImageRequest,
-	"networks":   (*Transport).proxyNetworkRequest,
-	"nodes":      (*Transport).proxyNodeRequest,
-	"secrets":    (*Transport).proxySecretRequest,
-	"services":   (*Transport).proxyServiceRequest,
-	"swarm":      (*Transport).proxySwarmRequest,
-	"tasks":      (*Transport).proxyTaskRequest,
-	"v2":         (*Transport).proxyAgentRequest,
-	"volumes":    (*Transport).proxyVolumeRequest,
+	"build":        (*Transport).proxyBuildRequest,
+	"configs":      (*Transport).proxyConfigRequest,
+	"containers":   (*Transport).proxyContainerRequest,
+	"distribution": (*Transport).proxyDistributionRequest,
+	"exec":         (*Transport).proxyExecRequest,
+	"images":       (*Transport).proxyImageRequest,
+	"networks":     (*Transport).proxyNetworkRequest,
+	"nodes":        (*Transport).proxyNodeRequest,
+	"secrets":      (*Transport).proxySecretRequest,
+	"services":     (*Transport).proxyServiceRequest,
+	"swarm":        (*Transport).proxySwarmRequest,
+	"tasks":        (*Transport).proxyTaskRequest,
+	"v2":           (*Transport).proxyAgentRequest,
+	"volumes":      (*Transport).proxyVolumeRequest,
 }
 
 type route struct {
